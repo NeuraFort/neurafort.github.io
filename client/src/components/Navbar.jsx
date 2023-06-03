@@ -1,5 +1,6 @@
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { IoMdOpen } from "react-icons/io";
 import { useState } from 'react';
 
 import logo from '../../images/logo.png';
@@ -27,10 +28,10 @@ const Navbar = () => {
                 {["Market", "Exchange", "Wallets", "Tutorials"].map((item, index) => (
                     <NavbarItem  key={item+index} title={item}/>
                 ))}
-                <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
-                    Connect Wallet
-                </li>
-            </ul>
+                <form  className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]" action="https://www.pinksale.finance" method="get" target="_blank">
+                    <button type="submit">Connect wallet</button>
+                </form>
+            </ul>   
             <div className="flex relative">
                 {toggleMenu
                 ?    <AiOutlineClose  fontSize={28} className="text-white md:hidden cursor-pointer" onClick={() => setToggleMenu(true)} />
