@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://neurafort.github.io/<neurafort.github.io>",
+  "homepage": "https://neurafort.github.io/neurafort.github.io",
 
   "scripts": {
     "build": "webpack --config webpack.config.cjs",
