@@ -4,12 +4,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  
-
   "scripts": {
     "build": "webpack --config webpack.config.cjs",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "predeploy": "npm run build", "deploy": "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "ethers": "^6.4.0",
