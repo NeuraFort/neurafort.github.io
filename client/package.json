@@ -3,11 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://neurafort.github.io/<neurafort.github.io>",
+
   "scripts": {
-    "dev": "vite",
     "build": "webpack --config webpack.config.cjs",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
     "ethers": "^6.4.0",
