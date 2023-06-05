@@ -1,11 +1,16 @@
+
+
 const SearchBar = () => {
     return (
-        <div className="">
+        <div>
             <form action="/search" method="get">
-                <input type="text" name="query" placeholder="Search for a token" className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" />
-                <button type="submit">Search</button>
+                <div class="search-container">
+                    <input type="text" name="serialNumber" placeholder="Enter Serial Number"></input>
+                    <button className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]" type="submit">Search</button>
+                </div>
             </form>
         </div>
+      
     );
 }
 
