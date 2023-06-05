@@ -1,13 +1,15 @@
 {
+  "homepage": "https://neurafort.github.io/neurafort.github.io",
   "name": "client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://neurafort.github.io/neurafort.github.io",
+  
 
   "scripts": {
     "build": "webpack --config webpack.config.cjs",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "predeploy": "npm run build", "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "ethers": "^6.4.0",
