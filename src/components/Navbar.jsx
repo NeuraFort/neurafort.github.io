@@ -4,7 +4,7 @@ import { IoMdOpen } from "react-icons/io";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../../images/logo.png';
+import logo from '../images/logo.png';
 
 
 const NavbarItem = ({ title, classProps }) => {
