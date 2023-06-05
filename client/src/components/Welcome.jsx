@@ -3,7 +3,7 @@ import { SiEthereum } from 'react-icons/si';
 import{ BsInfoCircle } from 'react-icons/bs';
 import { IoMdOpen } from "react-icons/io";
 
-import { Loader } from './';
+import { Loader } from '.';
 
 const Welcome = () => {
 

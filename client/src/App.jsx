@@ -1,4 +1,4 @@
-import { Navbar, Welcome, Footer, Services, Transactions, SearchBar, About } from './components/Index';
+import { Navbar, Welcome, Footer, Services, Transactions, SearchBar, About } from './components';
 import { BrowserRouter,Routes, Route} from 'react-router-dom';
 
 const App = () => {
