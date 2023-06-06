@@ -5,21 +5,24 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const App = () => {
 
   return (
-    <div className="min-h-screen">
-      <div className="gradient-bg-welcome">
-        <Navbar />
-        <SearchBar />
-        <BrowserRouter>
-          <Routes>
-            <Route exact path="/" element={<Welcome />} />
-            <Route exact path="/about" element={<About />} />
-          </Routes>     
-        </BrowserRouter>
+    <BrowserRouter>
+      <div className="min-h-screen">
+        <div className="gradient-bg-welcome">
+          <Navbar />
+          <SearchBar />
+
+            <Routes>
+              <Route exact path="/" element={<Welcome />} />
+              <Route exact path="/About" element={<About />} />
+              <Route exact path="/Welcome" element={<Welcome />} />
+            </Routes> 
+        </div>
+        <Services />
+        <Transactions />
+        <Footer />
       </div>
-      <Services />
-      <Transactions />
-      <Footer />
-    </div>
+    </BrowserRouter>
+
   );
 }
 
