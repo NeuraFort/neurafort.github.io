@@ -80,6 +80,16 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: rgb(149, 135, 135);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
