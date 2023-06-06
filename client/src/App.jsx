@@ -1,4 +1,6 @@
-import { Navbar, Welcome, Footer, Services, Transactions, SearchBar } from './components/Index';
+import { Navbar, Welcome, Footer, Services, Transactions, SearchBar } from './components/Index.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 const App = () => {
 
@@ -7,7 +9,11 @@ const App = () => {
       <div className="gradient-bg-welcome">
         <Navbar />
         <SearchBar />
-        <Welcome />
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" component={Welcome}/>
+          </Routes>     
+        </BrowserRouter>
       </div>
       <Services />
       <Transactions />
