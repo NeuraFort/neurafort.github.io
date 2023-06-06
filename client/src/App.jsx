@@ -1,5 +1,5 @@
-import { Navbar, Welcome, Footer, Services, Transactions, SearchBar } from './components/Index';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Navbar, Welcome, Footer, Services, Transactions, SearchBar } from './components/Index.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 const App = () => {
@@ -10,9 +10,9 @@ const App = () => {
         <Navbar />
         <SearchBar />
         <BrowserRouter>
-          <Switch>
+          <Routes>
             <Route exact path="/" component={Welcome}/>
-          </Switch>     
+          </Routes>     
         </BrowserRouter>
       </div>
       <Services />
