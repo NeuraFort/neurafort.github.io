@@ -1,4 +1,4 @@
-import { Navbar, Welcome, Footer, Services, Transactions, SearchBar } from './components/Index.js';
+import { Navbar, Welcome, Footer, Services, Transactions, SearchBar, About } from './components/Index.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -11,7 +11,8 @@ const App = () => {
         <SearchBar />
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" component={Welcome}/>
+            <Route exact path="/" element={<Welcome />} />
+            <Route exact path="/about" element={<About />} />
           </Routes>     
         </BrowserRouter>
       </div>
