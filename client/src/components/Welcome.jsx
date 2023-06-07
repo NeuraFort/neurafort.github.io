@@ -2,15 +2,13 @@ import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from 'react-icons/si';
 import{ BsInfoCircle } from 'react-icons/bs';
 import { IoMdOpen } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 
 const Welcome = () => {
 
     const commonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
-    const connectWallet = () => {
-
-    }
     return (
         <div className="flex w-full justify-center">
             <div className="flex md:flex-row flex-col items-strart justify-between md:p-20 py-12 px-4 ">
@@ -21,16 +19,14 @@ const Welcome = () => {
                     <p className ="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
                         Generate an authenticity report
                     </p>
-                    <button 
-                        type="button"
-                        onClick={connectWallet}
-                        className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#3546eb] "
-                    >
+                    <Link
+                        to="/Authenticate"
+                        className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#3546eb] ">
                         <p className="text-white text-base font-semibold ">
                             Start Now
                         </p>
                         <IoMdOpen/>
-                    </button>
+                    </Link>
                     <div className="grid sm:grid-cols-3 grid-cols-2  w-full mt-10">
                         <div className={`rounded-tl-2xl ${commonStyles}`}>
                             Reliability
