@@ -22,12 +22,24 @@ const NavbarItem = ({ title, classProps }) => {
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false)
 
+    const handleClick = () => {
+        return(
+            <Link to={"/"}>
+
+            </Link>
+        );
+    }
+
     return (
         <nav className="w-full flex md:justify-center justify-between items-center p-4">
             <div className="md:flex-[0.5] flex-initial justify-center items-center">
-                <img src = {logo} alt = "logo" className = "w-32 cursor-pointer">
+                <Link to="/">
+                    <img src = {logo} alt = "logo" className = "w-32 cursor-pointer">
+                    
 
-                </img>
+                    </img>
+                </Link>
+                
             </div>
             <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
                 {["Welcome", "About","Authenticate"].map((item, index) => (
@@ -50,7 +62,7 @@ const Navbar = () => {
                         <li className="text-xl w-full my-2">
                             <AiOutlineClose onClick={() => setToggleMenu(false)} />
                         </li>
-                        {["Welcome", "About"].map((item, index) => (
+                        {["Welcome", "About","Authenticate"].map((item, index) => (
                         <NavbarItem  key={item+index} title={item} classProps="my-2 text-lg"/>
                 ))}
                     </ul>
