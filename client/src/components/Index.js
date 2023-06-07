@@ -6,3 +6,5 @@ export {default as Transactions } from './Transactions.jsx';
 export {default as Services } from './Services.jsx';
 export {default as SearchBar } from './SearchBar.jsx';
 export {default as About } from './About.jsx';
+export {default as RegisterProduct } from './RegisterProduct.jsx';
+
