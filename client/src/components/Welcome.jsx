@@ -3,16 +3,23 @@ import { SiEthereum } from 'react-icons/si';
 import{ BsInfoCircle } from 'react-icons/bs';
 import { IoMdOpen } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Scroll } from "./Index.js"
 
 
 const Welcome = () => {
 
     const commonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
+
+
+
     return (
         <div className="flex w-full justify-center">
+            <Scroll/>
             <div className="flex md:flex-row flex-col items-strart justify-between md:p-20 py-12 px-4 ">
-                <div className="flex flex-1 justify-start flex-col md:mr-10 ">
+                <div className="flex flex-1 justify-start flex-col md:mr-10 slide-in">
+                    
                     <h1 className="text-3xl sm:text-5xl text-white text-gradient py-1 ">
                         Welcome to <br /> NeuraFort
                     </h1>
@@ -81,6 +88,7 @@ const Welcome = () => {
             </div>
         </div>
     );
+    
 }
 
 export default Welcome;
