@@ -1,12 +1,38 @@
 import{ useState } from 'react';
+import{ Scroll }  from "./Index.js";
+import{ AiOutlinePlusSquare } from "react-icons/ai";
+
 
 const RegisterProduct = () => {
+
+
   const [productName, setProductName] = useState('');
+  const [size, setSize] = useState('');
+  const [year, setYear] = useState('');
   const [productDescription, setProductDescription] = useState('');
-  const [images, setImages] = useState([]);
+  //const [images, setImages] = useState([]);
+
+
+  const images = [];
+
+  const setImages = (i) =>{
+    console.log(2);
+    images.push(i)
+    console.log(3);
+
+  }
+
 
   const handleProductNameChange = (e) => {
     setProductName(e.target.value);
+  };
+
+  const handleSizeNameChange = (e) => {
+    setSize(e.target.value);
+  };
+
+  const handleYearNameChange = (e) => {
+    setYear(e.target.value);
   };
 
   const handleProductDescriptionChange = (e) => {
@@ -14,9 +40,17 @@ const RegisterProduct = () => {
   };
 
   const handleImageUpload = (e) => {
+    
     const uploadedImages = Array.from(e.target.files);
+    console.log(1);
+
     setImages(uploadedImages);
+    console.log(4);
   };
+
+  const handleImages = () => {
+    
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,12 +62,14 @@ const RegisterProduct = () => {
     console.log('Images:', images);
   };
 
+
   return (
     <div className="container mx-auto py-10">
+        <Scroll/>
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4 text-gradient">Authenticate with NeuraFort</h1>
         <form onSubmit={handleSubmit}>
-            <div className="blue-glassmorphism">
+            <div className="blue-glassmorphism slide-in">
                 <div className="mb-6">
                     <label htmlFor="productName" className="block text-lg font-bold text-gradient mb-2">Manufacturer & Model</label>
                     <input
@@ -63,8 +99,8 @@ const RegisterProduct = () => {
                     <input
                     type="text"
                     id="size"
-                    value={productName}
-                    onChange={handleProductNameChange}
+                    value={size}
+                    onChange={handleSizeNameChange}
                     className="w-full rounded-3xl border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500"
                     placeholder="Enter the size of the item"
                     required
@@ -75,8 +111,8 @@ const RegisterProduct = () => {
                     <input
                     type="text"
                     id="year"
-                    value={productName}
-                    onChange={handleProductNameChange}
+                    value={year}
+                    onChange={handleYearNameChange}
                     className="w-full rounded-3xl border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500"
                     placeholder="Enter the year the item was produced/released"
                     required
@@ -93,26 +129,37 @@ const RegisterProduct = () => {
                     ></textarea>
                 </div>
                 <div className="mb-6">
-                    <label htmlFor="imageUpload" className="block text-lg font-bold text-gradient mb-2">Upload images of your item, supporting documents</label>
-                    <input
-                    type="file"
-                    id="imageUpload"
-                    onChange={handleImageUpload}
-                    className="mb-2 rounded-3xl"
-                    multiple
-                    accept="image/*"
-                    required
+                    <label htmlFor="imageUpload" className="block text-lg font-bold text-gradient mb-2 ">Upload</label>
+                        <input
+                                id="imageUpload"
+                                type="file"
+                                name="imageUpload"
+                                onChange={handleImageUpload}
+                                style={{display: "none"}}
+                                multiple
+                                accept=".png,.jpg,.jpeg,.gif,.pdf"
+                                required
                     />
-                    {images.length > 0 && (
-                    <div>
-                        <h3>Selected Images:</h3>
-                        {images.map((image, index) => (
-                        <div key={index}>
-                            <img src={URL.createObjectURL(image)} alt={`Image ${index + 1}`} className="w-20 h-20 object-cover mr-2" />
+                    <label>Upload</label>
+
+                    <div className="mt-10 flex flex-row">
+                        <AiOutlinePlusSquare className="w-20 h-20 nav-link nav-link:hover"/>
+                        <div>
+                            <h1>works</h1>
+                            {console.log("Images length:"+images.length)}
+                            {images.length > 0  && (
+                                <div className="flex flex-row">
+                                    {images.map((image, index) => (
+                                    <div key={index}>
+                                        <img src={URL.createObjectURL(image)} alt={`Image ${index + 1}`} className="w-20 h-20 object-cover mr-2" />
+                                    </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
-                        ))}
                     </div>
-                    )}
+                    
+                
                 </div>
         
             </div>  
